@@ -14,7 +14,7 @@ from .models import User, Product, Chat, Message # Asegúrate que todos estén
 from .db import init_db, get_session
 from .models import User, Product, Chat, Message
 from .auth import get_current_user, create_token, hash_pwd, verify_pwd, SECRET, ALGO
-
+#PRUEBA GIT
 
 app = FastAPI(title="PoliMarket") # Título actualizado
 app.add_middleware(
