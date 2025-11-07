@@ -1,0 +1,479 @@
+/* ---- Variables Globales (Tema Oscuro) ---- */
+:root {
+    --bg-color: #121212;
+    --primary-color: #1e1e1e;
+    --secondary-color: #2a2a2a;
+    --font-color: #e0e0e0;
+    --accent-color: #03dac6;
+    --brand-color: #007bff; /* Azul para el logo */
+    --like-color: #e91e63; /* Rosa para corazón */
+    --chat-bubble-color: #007bff;
+    --success-color: #4caf50;
+    --error-color: #f44336;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Componentes Globales ---- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--chat-bubble-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* ---- Header ---- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--brand-color);
+    text-decoration: none;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ---- Barra de Búsqueda y Filtros ---- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.search-bar {
+    flex-grow: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--font-color);
+}
+
+.filter-btn {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+/* ---- Cuadrícula de Productos (Buyer) ---- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.product-card {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background-color: var(--secondary-color);
+}
+
+.product-info {
+    padding: 0.8rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    color: var(--font-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.favorite-btn.liked {
+    color: var(--like-color);
+}
+
+/* ---- Panel de Vendedor (Seller) ---- */
+.seller-dashboard {
+    padding: 1rem;
+}
+
+.seller-menu {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.seller-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.seller-menu li {
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--secondary-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.seller-menu li:last-child {
+    border-bottom: none;
+}
+
+.seller-menu li:hover {
+    background-color: var(--secondary-color);
+}
+
+.analytics-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.analytics-card {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.analytics-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.analytics-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.analytics-value.profit {
+    color: var(--success-color);
+}
+
+/* ---- Página de Producto y Chat ---- */
+.product-detail {
+    padding: 1rem;
+}
+
+.product-detail img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.product-detail h1 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.product-detail .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.product-detail .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--brand-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ---- Chat UI (product.html) ---- */
+#chat {
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+#msgs {
+    height: 300px;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.msg-bubble {
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.msg-bubble.sent {
+    background-color: var(--brand-color);
+    color: white;
+    align-self: flex-end;
+}
+
+.msg-bubble.received {
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    align-self: flex-start;
+}
+
+.msg-bubble small {
+    display: block;
+    font-size: 0.75rem;
+    color: #ccc;
+    margin-top: 4px;
+}
+
+.chat-input-area {
+    display: flex;
+    border-top: 1px solid var(--secondary-color);
+}
+
+#msgInput {
+    flex-grow: 1;
+    padding: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    font-size: 1rem;
+}
+
+#msgInput:focus {
+    outline: none;
+}
+
+.send-btn {
+    padding: 0 1.5rem;
+    border: none;
+    background-color: var(--brand-color);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* ... al final de tu style.css ... */
+
+.chat-bubble img {
+    width: 50%;       /* Hace que la imagen ocupe todo el div */
+    height: 50%;      /* Hace que la imagen ocupe todo el div */
+    object-fit: fill; /* Evita que la imagen se deforme */
+    border-radius: 50%;/* Se asegura de que la imagen también sea redonda */
+}
+
+/* ---- Estilos del Dropdown de Filtros ---- */
+
+.filter-container {
+    position: relative; /* Clave para anclar el dropdown */
+    display: inline-block;
+}
+
+.filter-dropdown {
+    /* Oculto por defecto */
+    display: none; 
+    
+    /* Posición y apariencia */
+    position: absolute;
+    right: 0;
+    top: 50px; /* Un poco debajo del botón */
+    min-width: 240px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    z-index: 100;
+}
+
+/* Clase que JS añadirá para mostrarlo */
+.filter-dropdown.show {
+    display: block;
+}
+
+/* Contenido del dropdown */
+.filter-dropdown h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+}
+
+.filter-dropdown label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.filter-dropdown hr {
+    border: none;
+    border-top: 1px solid var(--secondary-color);
+    margin: 1rem 0;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.price-input {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    color: var(--font-color);
+    font-size: 0.9rem;
+}
+
+.apply-filter-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--brand-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.apply-filter-btn:hover {
+    opacity: 0.9;
+}
+
+/* ---- Estilos para la Lista de Chats (chats.html) ---- */
+#chat-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid var(--secondary-color);
+}
+
+.chat-list-item:hover {
+    background-color: var(--secondary-color);
+}
+
+.chat-item-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.chat-item-info {
+    overflow: hidden;
+}
+
+.chat-item-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-item-info p {
+    margin: 0;
+    color: #aaa;
+}

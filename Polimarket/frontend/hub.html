@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-t" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoliMarket - Comprar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="index.html" class="logo">POLIMARKET</a>
+        <div class="user-icon" id="user-icon" onclick="location.href='seller.html'"></div>
+    </header>
+
+    <div class="container">
+       <div class="search-container">
+    <input type="text" class="search-bar" id="search-input" placeholder="Buscar sanduches, empanadas...">
+    
+    <div class="filter-container">
+        <button class="filter-btn" onclick="toggleFilterDropdown(event)">
+            Filtrar
+        </button>
+        
+        <div class="filter-dropdown" id="filterDropdown">
+            <h4>Categoria</h4>
+            <label><input type="checkbox" name="category" value="food"> Alimenticio</label>
+            <label><input type="checkbox" name="category" value="electronics"> Electronico</label>
+            <label><input type="checkbox" name="category" value="study"> Material de Estudio</label>
+            
+            <hr> <h4>Precio</h4>
+            <div class="price-inputs">
+                <input type="number" id="price-min" placeholder="Min" class="price-input">
+                <input type="number" id="price-max" placeholder="Max" class="price-input">
+            </div>
+            
+            <button class="apply-filter-btn" onclick="applyFilters()">Aplicar</button>
+        </div>
+    </div>
+</div>
+
+        <div class="product-grid" id="products">
+            </div>
+    </div>
+
+    <div class="chat-bubble"><img src="burbujatxt.png" alt="abrir chat"></div>
+
+    <script src="app.js"></script>
+    <script>
+        loadMe(); // Carga el ícono de usuario
+        listProducts(); // Carga los productos
+    </script>
+</body>
+</html>

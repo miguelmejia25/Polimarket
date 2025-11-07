@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo" style="font-size: 1.2rem;">← Volver</a>
+        <div class="user-icon" id="user-icon" onclick="location.href='seller.html'"></div>
+    </header>
+
+    <div class="container product-detail">
+        <img id="product-image" src="" alt="Imagen del producto">
+
+        <h1 id="title">Cargando...</h1>
+        <div class="price" id="price">$0.00</div>
+        <p class="description" id="desc"></p>
+        
+        <button class="cta-button" onclick="startChat()">Contactar vendedor</button>
+        
+        
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        loadMe(); // Carga el ícono de usuario
+        loadProductPage(); // Carga los detalles del producto
+    </script>
+</body>
+</html>

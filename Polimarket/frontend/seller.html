@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-t" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoliMarket - Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="hub.html" class="logo" style="font-size: 1.2rem;">Ir a comprar</a>
+        <div class="user-icon" id="user-icon"></div>
+    </header>
+
+    <div class="container seller-dashboard">
+        <h2>Panel de Vendedor</h2>
+
+        <div class="analytics-container">
+            <div class="analytics-card">
+                <h3>Ventas Mensuales</h3>
+                <div class="analytics-value" id="monthly-sales">120</div>
+            </div>
+            <div class="analytics-card">
+                <h3>Ganancia Mensual</h3>
+                <div class="analytics-value profit" id="monthly-profit">$450.00</div>
+            </div>
+        </div>
+
+        <div class="seller-menu">
+            <ul>
+                <li onclick="location.href='add_product.html'">Añadir Producto</li>
+                <li onclick="alert('Funcionalidad: Editar Producto')">Editar Producto</li>
+                <li onclick="alert('Funcionalidad: Eliminar Producto')">Eliminar Producto</li>
+                <li onclick="alert('Funcionalidad: Ver Reseñas')">Ver Resenas</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="chat-bubble"><img src="burbujatxt.png" alt="abrir chat"></div>
+
+    <script src="app.js"></script>
+    <script>
+        loadMe(); // Carga el ícono de usuario
+        // Aquí iría la lógica para cargar las analíticas
+    </script>
+</body>
+</html>
