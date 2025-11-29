@@ -1,84 +1,13 @@
 <!doctype html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoliMarket - Login</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .login-container {
-            max-width: 400px;
-            margin: 10vh auto;
-            padding: 2rem;
-            background-color: var(--primary-color);
-            border-radius: 8px;
-            text-align: center;
-        }
-        .login-container h1 {
-            color: var(--brand-color);
-        }
-        .login-input {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            border: 1px solid var(--secondary-color);
-            background-color: var(--secondary-color);
-            color: var(--font-color);
-            font-size: 1rem;
-            box-sizing: border-box; /* Importante para el padding */
-        }
-        .login-btn {
-            width: 100%;
-            padding: 0.8rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: white;
-            background-color: var(--brand-color);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .login-btn:hover {
-            opacity: 0.9;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h1>POLIMARKET</h1>
-        <form id="login-form">
-            <input type.email" id="email" class="login-input" placeholder="usuario@espol.edu.ec" required>
-            <input type="password" id="password" class="login-input" placeholder="Contraseña" required>
-            <button type="submit" class="login-btn">Ingresar</button>
-        </form>
-        </div>
-        <div class="login-container">
-            <a href="recupera.html">Olvide mi contraseña</a>
-        <br>
-            ¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a>
-        </div>
-    <script src="app.js"></script>
-    <script>
-        // Añade un listener al formulario
-        document.getElementById('login-form').addEventListener('submit', async function(e) {
-            e.preventDefault(); // Evita que la página se recargue
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            try {
-                // Llama a la función login de app.js
-                await login(email, password);
-                
-                // Si el login es exitoso, redirige a la página de productos
-                window.location.href = 'products.html'; // <-- ¡Redirección!
-
-            } catch (error) {
-                console.error("Error de login:", error);
-                alert("Error: Usuario o contraseña incorrectos.");
-            }
-        });
-    </script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polimarket</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
