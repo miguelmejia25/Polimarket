@@ -18,13 +18,25 @@ export const Register = () => {
     }
 
     try {
-      const response = await register(name, email, password);
+      // Conexión al backend
+      const response = await fetch("http://127.0.0.1:8000/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+      const data = await response.json();
 
-      alert("¡Registro exitoso! Ahora serás redirigido para iniciar sesión.");
-      navigate("/");
+      if (!response.ok) {
+        throw new Error(data.detail || "Error en el registro");
+      }
+
+      // Registro exitoso
+      alert("¡Registro completo!: " + JSON.stringify(data, null, 2));
+
+      navigate("/"); // Redirige a Home/Login
     } catch (error) {
       console.error("Error de registro:", error);
-      alert("Error en el registro. Es probable que ese correo ya esté en uso.");
+      alert(error.message || "Error en el registro. Es probable que ese correo ya esté en uso.");
     }
   };
 
