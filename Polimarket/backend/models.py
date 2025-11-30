@@ -53,11 +53,3 @@ class Message(SQLModel, table=True):
     author_id: int = Field(foreign_key="user.id")
     text: str
     created_at: datetime = Field(default_factory=datetime.utcnow)
-
-
-class Message(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    chat_id: int = Field(foreign_key="chat.id")
-    author_id: int = Field(foreign_key="user.id")
-    text: str
-    created_at: datetime = Field(default_factory=datetime.utcnow)

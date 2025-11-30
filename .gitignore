@@ -1,0 +1,46 @@
+# ==== PYTHON ====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Entorno virtual
+venv/
+.venv/
+
+# Archivos de configuración locales
+.env
+.env.*
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+*.bak
+
+# ==== FASTAPI ====
+static/images/*
+
+
+# ==== EDITORES ====
+.vscode/
+.idea/
+
+# ==== NODE / REACT / FRONTEND ====
+node_modules/
+dist/
+build/
+
+# ==== SISTEMA OPERATIVO ====
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+
+# ==== GIT ====
+# Evitar archivos grandes o innecesarios
+*.orig
